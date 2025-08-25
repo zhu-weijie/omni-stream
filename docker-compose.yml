@@ -17,7 +17,7 @@ services:
       - "50052:50052"
     volumes:
       - .:/app
-    command: ["tail", "-f", "/dev/null"]
+    command: ["python", "event_service/server.py"]
 
   chat_service:
     build:
