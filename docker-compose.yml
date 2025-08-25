@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "50051:50051"
+    volumes:
+      - .:/app
     command: ["tail", "-f", "/dev/null"]
 
   event_service:
@@ -13,6 +15,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "50052:50052"
+    volumes:
+      - .:/app
     command: ["tail", "-f", "/dev/null"]
 
   chat_service:
@@ -21,4 +25,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "50053:50053"
+    volumes:
+      - .:/app
     command: ["tail", "-f", "/dev/null"]

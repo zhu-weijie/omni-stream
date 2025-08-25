@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package event;
+
+service EventService {
+  rpc SubscribeToGameEvents(EventRequest) returns (stream GameEvent);
+}
+
+message EventRequest {
+  string game_id = 1;
+}
+
+message GameEvent {
+  string event_id = 1;
+  string description = 2;
+  string timestamp = 3;
+}
