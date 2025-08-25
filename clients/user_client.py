@@ -15,7 +15,7 @@ logging.basicConfig(
 
 
 def run_client(user_id):
-    with grpc.insecure_channel('user_service:50051') as channel:
+    with grpc.insecure_channel("user_service:50051") as channel:
         stub = user_pb2_grpc.UserServiceStub(channel)
 
         logging.info(f"--- Client requesting user with id: {user_id} ---")
