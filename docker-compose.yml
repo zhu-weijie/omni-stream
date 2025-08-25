@@ -7,7 +7,7 @@ services:
       - "50051:50051"
     volumes:
       - .:/app
-    command: ["tail", "-f", "/dev/null"]
+    command: ["python", "user_service/server.py"]
 
   event_service:
     build:
