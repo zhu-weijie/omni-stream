@@ -15,7 +15,7 @@ logging.basicConfig(
 
 
 def run_client(user_id):
-    with grpc.insecure_channel("localhost:50051") as channel:
+    with grpc.insecure_channel('user_service:50051') as channel:
         stub = user_pb2_grpc.UserServiceStub(channel)
 
         logging.info(f"--- Client requesting user with id: {user_id} ---")
@@ -28,7 +28,7 @@ def run_client(user_id):
             logging.info(f"gRPC response received: \n{response}")
 
         except grpc.RpcError as e:
-            logging.error(f"An RPC error occurred: {e.status()} - {e.details()}")
+            logging.error(f"An RPC error occurred: {e}")
 
 
 if __name__ == "__main__":
